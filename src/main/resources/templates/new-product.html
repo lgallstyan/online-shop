@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Product</title>
+  <link rel="stylesheet" th:href="@{/new-product.css/}">
+  <link rel="stylesheet" th:href="@{/motion-background.css/}">
+
+
+
+</head>
+
+<body>
+<h1>Add New Product</h1>
+<form method="post" th:action="@{/admin/products/new-product}" th:object="${productDto}" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="name">Product Name:</label>
+    <input type="text" class="form-control" id="name" th:field="*{name}">
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea class="form-control" id="description" rows="3" th:field="*{description}"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input type="number" class="form-control" id="price" th:field="*{price}">
+  </div>
+<!--  <div class="form-group">-->
+<!--    <label class="col-md-4 control-label" for="imageUrl">Image URL</label>-->
+<!--    <div class="col-md-4">-->
+<!--      <input id="imageUrl" name="imageUrl" class="input-file" type="file" th:field="*{imageUrl}">-->
+<!--      <img th:if="${productDto.imageUrl}" th:src="@{${productDto.imageUrl}}" alt="Product image">-->
+<!--    </div>-->
+<!--  </div>-->
+
+            <div class="form-group">
+              <input type="file" name="image" accept="image/*" class="form-control-file">
+                    <img th:if="${productDto.imageUrl}" th:src="@{${productDto.imageUrl}}" alt="Product image">
+            </div>
+<!--            <button type="submit" class="btn btn-primary">Upload image</button>-->
+        </div>
+
+
+  <!--  <div class="form-group">-->
+<!--    <label class="col-md-4 control-label" for="imageUrl">Image URL</label>-->
+<!--    <div class="col-md-4">-->
+<!--      <input id="imageUrl" name="imageUrl" class="input-file" type="file" th:field="*{imageUrl}">-->
+<!--      <img th:src="@{'/img/' + ${productDto.imageUrl}}" alt="Product image">-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+  <!--  <div class="form-group">-->
+<!--    <label for="imageUrl">Image:</label>-->
+<!--    <input type="file" class="form-control" id="imageUrl" th:field="*{imageUrl}">-->
+<!--  </div>-->
+  <div class="form-group">
+    <label for="manufacturer">Manufacturer:</label>
+    <input type="text" class="form-control" id="manufacturer" th:field="*{manufacturer}">
+  </div>
+<!--  <div class="form-group">-->
+<!--    <label for="category">Category:</label>-->
+<!--    <select class="form-control" id="category" th:field="*{category}">-->
+<!--      <option th:each="category : ${categories}" th:value="${category.name}" th:text="${category.name}" th:unless="${category.name == 'jelly' or category.name == 'bakery' or category.name == 'snack' or category.name == 'chips'}"></option>-->
+<!--    </select>-->
+<!--  </div>-->
+  <div class="form-group">
+    <label for="category">Category Name:</label>
+    <input type="text" class="form-control" id="category" th:field="*{category}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+
+<!--<form th:action="@{/add-product}" th:object="${productDto}" method="post" enctype="multipart/form-data">-->
+<!--  <label for="name">Product Name</label>-->
+<!--  <input type="text" id="name" name="name" required>-->
+
+<!--  <label for="description">Description</label>-->
+<!--  <textarea id="description" name="description" rows="5" required></textarea>-->
+
+<!--  <label for="price">Price</label>-->
+<!--  <input type="number" id="price" name="price" required>-->
+
+<!--  <label for="imageUrl">Image URL</label>-->
+<!--  <input type="url" id="imageUrl" name="imageUrl" required>-->
+
+<!--  <label for="manufacturer">Manufacturer</label>-->
+<!--  <input type="text" id="manufacturer" name="manufacturer" required>-->
+
+<!--  <label for="categoryId">Category</label>-->
+<!--  <input type="text" id="categoryId" name="categoryId" required>-->
+
+<!--  <input type="submit" value="Add Product">-->
+<!--</form>-->
+<script>
+  const error = document.querySelector('.error-message');
+  if (error) {
+    alert(error.textContent);
+  }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Welcome to Sweetland</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/style.css/}">
+<!--  <link rel="stylesheet" type="text/css" href="/static/account-dropdown.css">-->
+<!--  h:href="@{/}"-->
+</head>
+<body>
+<header>
+  <h1>Welcome to <a >Sweetland</a></h1>
+</header>
+<nav>
+  <ul>
+
+    <li style="display: inline-block; vertical-align: middle;">
+      <a style="display: inline-block; vertical-align: middle; float: left;">Hello, <span th:text="${username}"></span></a>
+    </li>
+    <li style="display: inline-block; vertical-align: middle;">
+      <a th:href="@{/products}" style="display: inline-block; vertical-align: middle; margin-right: 10px">See all products</a>
+    </li>
+
+    <li style="clear: both;"></li>
+
+    <li style="display: inline-block; vertical-align: middle; float: right;">
+      <details data-popover="down">
+        <summary class="summary">My Account</summary>
+        <div id="my-account-dropdown" class="account-dropdown">
+          <ul>
+            <li><a th:href="@{/myOrders}">My Orders</a></li>
+            <li><a th:href="@{/myAddresses}">My Addresses</a></li>
+            <li><a th:href="@{/logout}" th:method="post">Logout</a></li>
+          </ul>
+        </div>
+      </details>
+    </li>
+  </ul>
+</nav>
+
+
+<main>
+  <div class="banner">
+    <h2>Welcome to Sweetland, where all your sweet dreams come true</h2>
+    <a th:href="@{/products}">Shop now</a>
+  </div>
+  <div class="featured-products">
+    <h3>Featured products</h3>
+    <ul>
+      <li>
+        <img th:src="@{/img/cupcake1.png}">
+        <h4>Cupcake 1</h4>
+        <p>$5.00</p>
+      </li>
+      <li>
+        <img th:src="@{/img/cupcake2.png}">
+        <h4>Cupcake 2</h4>
+        <p>$5.00</p>
+      </li>
+      <li>
+        <img th:src="@{/img/cupcake3.png}">
+        <h4>Cupcake 3</h4>
+        <p>$5.00</p>
+      </li>
+      <li>
+        <img th:src="@{/img/macaroon.png}">
+        <h4>Macaroon 1</h4>
+        <p>$5.00</p>
+      </li>
+      <li>
+        <img th:src="@{/img/macaroon2.png}">
+        <h4>Macaroon 2</h4>
+        <p>$5.00</p>
+      </li>
+      <li>
+        <img th:src="@{/img/macaroon3.png}">
+        <h4>Macaroon 3</h4>
+        <p>$5.00</p>
+      </li>
+    </ul>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2023 Sweetland. All rights reserved.</p>
+</footer>
+</body>
+</html>

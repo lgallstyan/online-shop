@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Sweetland - Checkout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" th:href="@{/motion-background.css}">
+  <style>
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 28px;
+    }
+    .card {
+      height: 100%;
+    }
+    .card-img-top {
+      object-fit: cover;
+      height: 200px;
+    }
+    .card-title {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .card-text {
+      font-size: 18px;
+    }
+    .card-price {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .form-control {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Sweetland</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+      <li><a th:href="@{/home}">Home</a></li>
+      </li>
+      <li class="nav-item active">
+      <li><a th:href="@{/products}">Products</a></li>
+      </li>
+      <li class="nav-item active">
+      <li><a th:href="@{/cart}">Cart</a></li>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container my-4">
+  <h1>Checkout</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <form th:action="@{/order}" th:object="${addressDto}" th:method="post">
+          <h5 class="card-title mb-4">Shipping Address</h5>
+            <div class="form-group">
+              <label for="addressLine">Address Line</label>
+              <input type="text" class="form-control" id="addressLine" name="addressLine" required>
+            </div>
+            <div class="form-row" >
+              <div class="form-group col-md-6">
+                <label for="country">Country:</label>
+                <input type="text" class="form-control" id="country" name="country" required>
+              </div>
+
+              <div class="form-group" style="width: 300px;">
+                <label for="province">Province/State:</label>
+                <input type="text" class="form-control" id="province" name="province" required>
+              </div>
+
+              <div class="form-group" >
+                <label for="city">City:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+              </div>
+
+              <div class="form-group" style="width: 300px;">
+                <label for="postalCode">Postal Code:</label>
+                <input type="text" class="form-control" id="postalCode" name="postalCode" required>
+              </div>
+            </div>
+
+            <hr>
+            <h5 class="card-title mb-4">Payment Details</h5>
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" class="form-control" id="cardNumber" name="cardNumber" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="expDate">Expiration Date</label>
+                <input type="text" class="form-control" id="expDate" name="expDate" placeholder="MM/YY" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="cvc">CVC</label>
+                <input type="text" class="form-control" id="cvc" name="cvc" required>
+                <input type="submit" value="Order">
+
+              </div>
+            </div>
+            <hr>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</body>
+</html>

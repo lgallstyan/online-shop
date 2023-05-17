@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Sweetland - Product Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" th:href="@{/menu-b.css/}">
+  <link rel="stylesheet" th:href="@{/view-product.css/}">
+  <style>
+
+
+    .log{
+      font-size: 40px;
+      font-weight: 100;
+      font-family: 'Great Vibes',sans-serif;
+
+      color: #222222;
+      cursor: pointer;
+    }
+    .card-img-top {
+      object-fit: cover;
+      height: 300px;
+    }
+    .card-title {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .card-text {
+      font-size: 18px;
+    }
+    .card-price {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .card {
+      margin: auto;
+    }
+
+    .col-md-6 h1 {
+      margin: auto;
+      width: 400px;
+    }
+    .col-md-6 p {
+      margin: auto;
+      width: 400px;
+    }
+    .col-md-6 h2 {
+      margin: auto;
+      width: 400px;
+    }
+    .col-md-6 form {
+      margin-left: 50%;
+      margin-right: 50%;
+      width: 200px;
+    }
+    .col-md-6 a {
+      margin-left: 50%;
+      margin-top: 10px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navba">
+  <div class="inner-widt">
+    <a href="http://localhost:9090/sweet/" class="log" style="text-decoration: none;">Sweetland</a>
+    <div class="navbar-men">
+      <a th:href="@{/}">Գլխավոր</a>
+      <a th:href="@{/about}">Մեր մասին</a>
+      <a th:href="@{/products}">Տեսականի</a>
+      <a th:href="@{/login}">Հաշիվ</a>
+      <a th:href="@{/contact}">Հետադարձ կապ</a>
+    </div>
+  </div>
+</nav>
+
+
+<!--<div class="container">-->
+<!--  <div class="card">-->
+<!--    <div class="card-body">-->
+<!--      <h3 class="card-title">Rounded Chair</h3>-->
+<!--      <h6 class="card-subtitle">globe type chair for rest</h6>-->
+<!--      <div class="row">-->
+<!--        <div class="col-lg-5 col-md-5 col-sm-6">-->
+<!--          <div class="white-box text-center"><img src="https://www.bootdey.com/image/430x600/00CED1/000000" class="img-responsive"></div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-7 col-md-7 col-sm-6">-->
+<!--          <h4 class="box-title mt-5">Product description</h4>-->
+<!--          <p>Lorem Ipsum available,but the majority have suffered alteration in some form,by injected humour,or randomised words which don't look even slightly believable.but the majority have suffered alteration in some form,by injected humour</p>-->
+<!--          <h2 class="mt-5">-->
+<!--            $153<small class="text-success">(36%off)</small>-->
+<!--          </h2>-->
+<!--          <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">-->
+<!--            <i class="fa fa-shopping-cart"></i>-->
+<!--          </button>-->
+<!--          <button class="btn btn-primary btn-rounded">Buy Now</button>-->
+<!--          <h3 class="box-title mt-5">Key Highlights</h3>-->
+<!--          <ul class="list-unstyled">-->
+<!--            <li><i class="fa fa-check text-success"></i>Sturdy structure</li>-->
+<!--            <li><i class="fa fa-check text-success"></i>Designed to foster easy portability</li>-->
+<!--            <li><i class="fa fa-check text-success"></i>Perfect furniture to flaunt your wonderful collectibles</li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container my-4">
+  <div class="row">
+    <div class="card mb-4 box-shadow">
+      <img class="card-img-top" th:src="@{${product.imageUrl}}" alt="Product Image">
+      <div class="card-body">
+        <div class="col-md-6">
+          <h1 th:text="${product.name}">Անվանումը</h1>
+          <p class="card-text" th:text="${product.description}">Նկարագրությունը</p>
+          <h2 class="card-price" th:text="${product.price}">$10.00</h2>
+          <form th:action="@{/add-cart}" th:object="${addProductToCartDto}" method="post">
+            <input type="hidden" th:field="*{productId}" th:value="${product.id}">
+<!--            <div class="form-group">-->
+<!--              <label for="quantity">Quantity</label>-->
+<!--              <input type="number" class="form-control" id="quantity" th:field="*{quantity}" required>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Add to Cart</button>-->
+<!--            <a th:href="@{/cart}" th:method="post" class="btn btn-secondary">Add to Cart</a>-->
+            <form th:action="@{/add-cart}" th:object="${addProductToCartDto}" method="post">
+              <input type="hidden" th:field="*{productId}" th:value="${product.id}">
+<!--              <input type="hidden" th:field="*{userId}" th:value="${userId}">-->
+              <input type="hidden" th:field="*{cartId}" th:value="${cartId}">
+              <div class="form-group">
+                <label for="quantity">Քանակը</label>
+                <input type="number" class="form-control" id="quantity" th:field="*{quantity}" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Ավելացնել զամբյուղ</button>
+            </form>
+
+
+
+          </form>
+
+          <a th:href="@{/products}" class="btn btn-secondary">Շարունակել գնումները</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

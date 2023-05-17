@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sweetland - Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" th:href="@{/motion-background.css/}">-->
+    <link rel="stylesheet" th:href="@{/menu-b.css/}">
+
+    <style>
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        .card {
+            height: 20%;
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 100px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .card-text {
+            font-size: 18px;
+        }
+
+        .card-price {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .table td, .table th {
+            vertical-align: middle;
+            font-size: 18px;
+        }
+
+        .table th {
+            font-weight: bold;
+        }
+
+        .cart-table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cart-table th {
+            padding: 10px;
+            text-align: left;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+
+        .cart-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navba">
+    <div class="inner-widt">
+        <a href="http://localhost:9090/sweet/" class="log" style="text-decoration: none;">Sweetland</a>
+        <div class="navbar-men">
+            <a th:href="@{/}">Գլխավոր</a>
+            <a th:href="@{/about}">Մեր մասին</a>
+            <a th:href="@{/products}">Տեսականի</a>
+            <a th:href="@{/login}">Հաշիվ</a>
+            <a th:href="@{/contact}">Հետադարձ կապ</a>
+
+        </div>
+    </div>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <li><a th:href="@{/checkout}">Վճարել</a></li>
+        </li>
+    </ul>
+</nav>
+
+
+
+<div class="container my-4">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Ապրանք</th>
+            <th>Գին</th>
+            <th>Քանակ</th>
+            <th>Ընդամենը</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cartItem : ${cartItems}">
+            <td>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img th:src="@{${cartItem.product.imageUrl}}" class="img-fluid" alt="Product Image">
+                    </div>
+                    <div class="col-md-8">
+                        <h5 th:text="${cartItem.product.name}" class="card-title"></h5>
+                        <p th:text="${cartItem.product.description}" class="card-text"></p>
+                    </div>
+                </div>
+            </td>
+            <td th:text="${cartItem.product.price}" class="align-middle">$</td>
+            <td>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form th:action="@{'/cart/update/' + ${cartItem.product.id}}" method="post">
+                            <input type="number" name="quantity" th:value="${cartItem.quantity}" min="1"
+                                   class="form-control">
+                            <button type="submit" class="btn btn-primary mt-2">Փոփոխել</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <form th:action="@{'/cart/remove/' + ${cartItem.id}}" method="post">
+                            <button type="submit" class="btn btn-danger">Ջնջել</button>
+                        </form>
+                    </div>
+                </div>
+            </td>
+            <td th:text="${cartItem.product.price * cartItem.quantity}" class="align-middle"></td>
+        </tr>
+        <tr>
+            <td colspan="3"><strong>Ընդամենը:</strong></td>
+            <td th:text="${totalPrice}" class="align-middle"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
