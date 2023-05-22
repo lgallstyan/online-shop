@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet" th:href="@{/menu-b.css/}">
+
+</head>
+<body>
+
+<header class="main-header">
+  <a href="http://localhost:9090/sweet/" class="main-header-logo" style="text-decoration: none;">Sweetland</a>
+
+  <form class="main-header-form" th:action="@{/search}" method="get">
+    <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
+    <button class="header-form-submit-button" type="submit">Որոնել</button>
+  </form>
+
+  <nav class="main-header-nav">
+    <a class="nav-item" th:href="@{/}">Գլխավոր</a>
+    <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
+    <a class="nav-item" th:href="@{/products}">Տեսականի</a>
+    <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
+    <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+  </nav>
+
+</header>
+
+<div class="row mt-4">
+  <!--    <div class="col-md-4" th:each="product : ${products}">-->
+  <div class="col-md-4" th:each="user : ${users}">
+
+    <div class="card mb-4 box-shadow">
+      <!--            <img class="card-image card-img-top" th:src="@{${product.imageUrl}}" alt="Product Image">-->
+      <div class="card-body">
+        Էլ. հասցե:<h4 class="card-title" th:text="${user.getEmail()}"></h4>
+        Անուն:<p class="card-text" th:text="${user.getFirstName() + ' ' +  user.getLastName()}">Product Description</p>
+        Հեռախոս։<p class="card-text" th:text="${user.getPhone()}"></p>
+        Դեր։<p class="card-text" th:text="${user.getRole()}"></p>
+<!--        Հասցե։<p class="card-text" th:text="${order.getAddress().getAddressLine()}"></p>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

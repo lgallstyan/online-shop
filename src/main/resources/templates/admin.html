@@ -1,62 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--  <title>Sweetland Admin</title>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--  <link rel="stylesheet" th:href="@{/style.css/}">-->
-<!--  <link rel="stylesheet" th:href="@{/motion-background.css/}">-->
-<!--  <style>-->
-<!--    .admin-panel ul {-->
-<!--      display: flex;-->
-<!--      list-style: none;-->
-<!--      margin: 0;-->
-<!--      padding: 0;-->
-<!--    }-->
-<!--    .admin-panel ul li {-->
-<!--      margin-right: 1em;-->
-<!--    }-->
-<!--  </style>-->
-<!--</head>-->
-<!--<body>-->
-<!--<header>-->
-<!--  <h1>Sweetland Admin</h1>-->
-<!--</header>-->
-<!--<nav>-->
-<!--  <ul>-->
-<!--    <li><a th:href="@{/home}">Home</a></li>-->
-<!--    <li><a th:href="@{/logout}" th:method="post">Logout</a></li>-->
-<!--  </ul>-->
-<!--</nav>-->
-<!--<main>-->
-<!--  <div class="admin-panel">-->
-<!--    <h2>Welcome, Admin</h2>-->
-<!--    <h3>Manage Products</h3>-->
-<!--    <ul>-->
-<!--      <li><a th:href="@{/admin/products/new-product}">Add New Product</a></li>-->
-<!--      <li><a th:href="@{/products}">View All Products</a></li>-->
-<!--      <li><a th:href="@{/admin/products/delete}">Delete Product</a></li>-->
-<!--    </ul>-->
-<!--    <h3>Manage Orders</h3>-->
-<!--    <ul>-->
-<!--      <li><a th:href="@{/admin/orders/new-order}">Create New Order</a></li>-->
-<!--      <li><a th:href="@{/admin/orders}">View All Orders</a></li>-->
-<!--      <li><a th:href="@{/admin/orders/delete}">Delete Order</a></li>-->
-<!--    </ul>-->
-<!--    <h3>Manage Customers</h3>-->
-<!--    <ul>-->
-<!--      <li><a th:href="@{/admin/customers/new-customer}">Add New Customer</a></li>-->
-<!--      <li><a th:href="@{/admin/customers}">View All Customers</a></li>-->
-<!--      <li><a th:href="@{/admin/delete-user}">Delete Customer</a></li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--</main>-->
-<!--<footer>-->
-<!--  <p>&copy; 2023 Sweetland. All rights reserved.</p>-->
-<!--</footer>-->
-<!--</body>-->
-<!--</html>-->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,240 +9,47 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
-    <style>
-        .navbar {
-            background-color: #343a40;
-        }
 
-        .navbar-brand, .nav-link {
-            color: #fff;
-        }
+    <link rel="stylesheet" th:href="@{/menu-b.css/}">
 
-        .card {
-            margin-bottom: 20px;
-        }
-
-        .card-header {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .card-title {
-            margin-bottom: 0;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0069d9;
-            border-color: #0062cc;
-        }
-
-        .btn-danger {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-
-        .btn-danger:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#">Sweetland</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Orders</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Customers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Reports</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
-<div class="container-fluid mt-4">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Orders</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">You have 10 new orders.</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div
-            <div class="container-fluid">
-                <div class="row">
+<header class="main-header">
+    <a href="http://localhost:9090/sweet/" class="main-header-logo" style="text-decoration: none;">Sweetland</a>
 
-                    <!-- Sidebar -->
-                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                        <div class="sidebar-sticky pt-3">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">
-                                        <span data-feather="home"></span>
-                                        Dashboard <span class="sr-only">(current)</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span data-feather="shopping-cart"></span>
-                                        Orders
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span data-feather="users"></span>
-                                        Customers
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span data-feather="layers"></span>
-                                        Products
-                                    </a>
-                                </li>
-                            </ul>
+    <form class="main-header-form" th:action="@{/search}" method="get">
+        <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
+        <button class="header-form-submit-button" type="submit">Որոնել</button>
+    </form>
 
-                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                                <span>Saved reports</span>
-                                <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                                    <span data-feather="plus-circle"></span>
-                                </a>
-                            </h6>
-                            <ul class="nav flex-column mb-2">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span data-feather="file-text"></span>
-                                        Current month
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span data-feather="file-text"></span>
-                                        Last quarter
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span data-feather="file-text"></span>
-                                        Social engagement
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span data-feather="file-text"></span>
-                                        Year-end sale
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+    <nav class="main-header-nav">
+        <a class="nav-item" th:href="@{/}">Գլխավոր</a>
+        <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
+        <a class="nav-item" th:href="@{/products}">Տեսականի</a>
+        <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
+        <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+    </nav>
 
-                    <!-- Main Content -->
-                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Dashboard</h1>
-                            <div class="btn-toolbar mb-2 mb-md-0">
-                                <div class="btn-group mr-2">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                                </div>
-                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                                    <span data-feather="calendar"></span>
-                                    This week
-                                </button>
-                            </div>
-                        </div>
+</header>
 
-                        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+<div class="row mt-4">
+    <!--    <div class="col-md-4" th:each="product : ${products}">-->
+    <div class="col-md-4" th:each="order : ${orders}">
 
-                        <h2>Admin Dashboard</h2>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Manage Products</h5>
-                                        <p class="card-text">Add, edit or delete products from your inventory.</p>
-                                        <a href="/admin/products" class="btn btn-primary">Go to Products</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Manage Orders</h5>
-                                        <p class="card-text">View and manage customer orders.</p>
-                                        <a href="/admin/orders" class="btn btn-primary">Go to Orders</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Manage Users</h5>
-                                        <p class="card-text">Add or delete users from the system.</p>
-                                        <a href="/admin/users" class="btn btn-primary">Go to Users</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Sales Statistics</h5>
-                                        <p class="card-text">View sales statistics for your shop.</p>
-                                        <a href="/admin/sales" class="btn btn-primary">View Sales</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Customer Reviews</h5>
-                                        <p class="card-text">View and manage customer reviews.</p>
-                                        <a href="/admin/reviews" class="btn btn-primary">View Reviews</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-                </div>
+        <div class="card mb-4 box-shadow">
+<!--            <img class="card-image card-img-top" th:src="@{${product.imageUrl}}" alt="Product Image">-->
+            <div class="card-body">
+                Էլ. հասցե:<h4 class="card-title" th:text="${order.getUser().getEmail()}"></h4>
+                Կարգավիճակ:<p class="card-text" th:text="${order.orderStatus}">Product Description</p>
+                Ամսաթիվ։<p class="card-text" th:text="${order.getOrderDate()}"></p>
+                Արժեք։<p class="card-text" th:text="${order.getTotalAmount()}"></p>
+                Հասցե։<p class="card-text" th:text="${order.getAddress().getAddressLine()}"></p>
             </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>
 

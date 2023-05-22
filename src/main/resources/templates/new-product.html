@@ -6,34 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add New Product</title>
   <link rel="stylesheet" th:href="@{/new-product.css/}">
-  <link rel="stylesheet" th:href="@{/motion-background.css/}">
+  <link rel="stylesheet" th:href="@{/menu-b.css/}">
 
 
 
 </head>
 
 <body>
-<h1>Add New Product</h1>
+<h1>Ավելացնել նոր ապրանք</h1>
 <form method="post" th:action="@{/admin/products/new-product}" th:object="${productDto}" enctype="multipart/form-data">
   <div class="form-group">
-    <label for="name">Product Name:</label>
+    <label for="name">Ապրանքի անունը:</label>
     <input type="text" class="form-control" id="name" th:field="*{name}">
   </div>
   <div class="form-group">
-    <label for="description">Description:</label>
+    <label for="description">Նկարագրություն:</label>
     <textarea class="form-control" id="description" rows="3" th:field="*{description}"></textarea>
   </div>
   <div class="form-group">
-    <label for="price">Price:</label>
+    <label for="price">Արժեք:</label>
     <input type="number" class="form-control" id="price" th:field="*{price}">
   </div>
-<!--  <div class="form-group">-->
-<!--    <label class="col-md-4 control-label" for="imageUrl">Image URL</label>-->
-<!--    <div class="col-md-4">-->
-<!--      <input id="imageUrl" name="imageUrl" class="input-file" type="file" th:field="*{imageUrl}">-->
-<!--      <img th:if="${productDto.imageUrl}" th:src="@{${productDto.imageUrl}}" alt="Product image">-->
-<!--    </div>-->
-<!--  </div>-->
+
 
             <div class="form-group">
               <input type="file" name="image" accept="image/*" class="form-control-file">
@@ -57,7 +51,7 @@
 <!--    <input type="file" class="form-control" id="imageUrl" th:field="*{imageUrl}">-->
 <!--  </div>-->
   <div class="form-group">
-    <label for="manufacturer">Manufacturer:</label>
+    <label for="manufacturer">Արտադրող:</label>
     <input type="text" class="form-control" id="manufacturer" th:field="*{manufacturer}">
   </div>
 <!--  <div class="form-group">-->
@@ -67,11 +61,12 @@
 <!--    </select>-->
 <!--  </div>-->
   <div class="form-group">
-    <label for="category">Category Name:</label>
+    <label for="category">Կատեգորիա:</label>
     <input type="text" class="form-control" id="category" th:field="*{category}">
   </div>
 
-  <button type="submit" class="btn btn-primary">Add Product</button>
+
+  <button type="submit" class="btn btn-primary">Ավելացնել ապրանքը</button>
 </form>
 
 <!--<form th:action="@{/add-product}" th:object="${productDto}" method="post" enctype="multipart/form-data">-->

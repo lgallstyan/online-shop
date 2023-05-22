@@ -20,11 +20,11 @@
                 <img src="image/chip.png" alt="">
                 <img src="image/visa.png" alt="">
             </div>
+            <span>Քարտի համարը</span>
             <div class="card-number-box">################</div>
             <div class="flexbox">
                 <div class="box">
-                    <span>card holder</span>
-                    <div class="card-holder-name">full name</div>
+                    <div class="card-holder-name">Անուն ազգանուն</div>
                 </div>
                 <div class="box">
                     <span>expires</span>
@@ -47,7 +47,7 @@
 
     </div>
 
-    <form action="">
+    <form th:action="@{/order}" th:method="POST">
         <div class="inputBox">
             <span>card number</span>
             <input type="text" maxlength="16" class="card-number-input">
@@ -58,7 +58,7 @@
             <input type="text" class="card-holder-input">
         </div>
 
-        <div class="flexbox">
+<!--        <div class="flexbox">-->
             <div class="inputBox">
                 <span>expiration mm</span>
                 <select name="" id="" class="month-input">
@@ -79,7 +79,7 @@
             </div>
             <div class="inputBox">
                 <span>expiration yy</span>
-                <select name="" id="" class="year-input">
+                <select name="" id="y" class="year-input">
                     <option value="year" selected disabled>year</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
@@ -98,31 +98,40 @@
                 <input type="text" maxlength="4" class="cvv-input">
             </div>
 
-            <div class="inputBox">
-                <span>address line</span>
-                <input type="text" maxlength="16" class="card-number-input">
+        <form th:action="@{/order}" th:object="${addressDto}" th:method="POST">
+
+        <div class="inputBox">
+                <span>Հասցե</span>
+                <input type="text" maxlength="16" th:field="*{addressLine}" class="card-number-input">
             </div>
             <div class="inputBox">
-                <span>country</span>
-                <input type="text" maxlength="16" class="card-number-input">
+                <span>Երկիր</span>
+                <input type="text" maxlength="16" th:field="*{country}" class="card-number-input">
             </div>
             <div class="inputBox">
-                <span>province</span>
-                <input type="text" maxlength="16" class="card-number-input">
+                <span>Մարզ</span>
+                <input type="text" maxlength="16" th:field="*{province}" class="card-number-input">
             </div>
             <div class="inputBox">
-                <span>city</span>
-                <input type="text" maxlength="16" class="card-number-input">
+                <span>Քաղաք</span>
+                <input type="text" maxlength="16" th:field="*{city}" class="card-number-input">
             </div>
             <div class="inputBox">
-                <span>postal code</span>
-                <input type="text" maxlength="16" class="card-number-input">
+                <span>Փոստային ինդեքս</span>
+                <input type="text" maxlength="16" th:field="*{postalCode}" class="card-number-input">
             </div>
+            <a  class="order-button" th:href="@{/}"><input type="submit"  class="submit-btn"></a>
+<!--            <button class="btn btn-outline-warning">Վճարել</button></a>-->
+            <!--            <button type="submit" class="btn btn-outline-danger" value="Հաստատել"></button>-->
+<!--            <input type="submit" value="Order">-->
 
 
-        </div>
-        <input type="submit" value="submit" class="submit-btn">
+        </form>
+
+
+<!--        </div>-->
     </form>
+
 
 <!--    <div class="container my-4">-->
 <!--        <h1>Checkout</h1>-->
@@ -131,35 +140,36 @@
 <!--            <div class="col-md-6 offset-md-3">-->
 <!--                <div class="card">-->
 <!--                    <div class="card-body">-->
-                        <form th:action="@{/order}" th:object="${addressDto}" th:method="post">
-                            <h5 class="card-title mb-4">Shipping Address</h5>
-                            <div class="form-group">
-                                <label for="addressLine">Address Line</label>
-                                <input type="text" class="form-control" id="addressLine" name="addressLine" required>
-                            </div>
-                            <div class="form-row" >
-                                <div class="form-group col-md-6">
-                                    <label for="country">Country:</label>
-                                    <input type="text" class="form-control" id="country" name="country" required>
-                                </div>
+<!--                        <form th:action="@{/order}" th:object="${addressDto}" th:method="post">-->
+<!--                            <h5 class="card-title mb-4">Shipping Address</h5>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="addressLine">Address Line</label>-->
+<!--                                <input type="text" class="form-control" id="addressLine" name="addressLine" required>-->
+<!--                            </div>-->
+<!--                            <div class="form-row" >-->
+<!--                                <div class="form-group col-md-6">-->
+<!--                                    <label for="country">Country:</label>-->
+<!--                                    <input type="text" class="form-control" id="country" name="country" required>-->
+<!--                                </div>-->
 
-                                <div class="form-group" style="width: 300px;">
-                                    <label for="province">Province/State:</label>
-                                    <input type="text" class="form-control" id="province" name="province" required>
-                                </div>
+<!--                                <div class="form-group" style="width: 300px;">-->
+<!--                                    <label for="province">Province/State:</label>-->
+<!--                                    <input type="text" class="form-control" id="province" name="province" required>-->
+<!--                                </div>-->
 
-                                <div class="form-group" >
-                                    <label for="city">City:</label>
-                                    <input type="text" class="form-control" id="city" name="city" required>
-                                </div>
+<!--                                <div class="form-group" >-->
+<!--                                    <label for="city">City:</label>-->
+<!--                                    <input type="text" class="form-control" id="city" name="city" required>-->
+<!--                                </div>-->
 
-                                <div class="form-group" style="width: 300px;">
-                                    <label for="postalCode">Postal Code:</label>
-                                    <input type="text" class="form-control" id="postalCode" name="postalCode" required>
-                                </div>
-                            </div>
+<!--                                <div class="form-group" style="width: 300px;">-->
+<!--                                    <label for="postalCode">Postal Code:</label>-->
+<!--                                    <input type="text" class="form-control" id="postalCode" name="postalCode" required>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
-                        </form>
+<!--                        </form>-->
+
 
                     </div>
 
