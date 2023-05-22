@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </td>
-            AMD<td th:text="${cartItem.product.price + 'AMD'}" class="align-middle">$</td>
+            <td th:text="${cartItem.product.price}" class="align-middle">$</td>
             <td>
                 <div class="row">
                     <div class="col-md-6">
@@ -68,11 +68,11 @@
                     </div>
                 </div>
             </td>
-            <td th:text="${cartItem.product.price * cartItem.quantity + 'AMD'}" class="align-middle">AMD</td>
+            <td th:text="${cartItem.product.price * cartItem.quantity}" class="align-middle">AMD</td>
         </tr>
         <tr>
             <td colspan="3"><strong>Ընդամենը:</strong></td>
-            <td th:text="${totalPrice + 'AMD'}" class="align-middle"></td>
+            <td th:text="${totalPrice}" class="align-middle">AMD</td>
         </tr>
         </tbody>
     </table>

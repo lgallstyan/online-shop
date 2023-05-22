@@ -1,10 +1,10 @@
 body{
-    background-color: #edf1f5;
+    background: #f8f2e7;
     margin-top:20px;
 }
-.card {
-    margin-bottom: 30px;
-}
+/*.card {*/
+/*    margin-bottom: 30px;*/
+/*}*/
 .card {
     position: relative;
     display: flex;
@@ -21,10 +21,82 @@ body{
     margin-bottom: 10px;
     color: #8898aa;
 }
+
+
+.card-img-top {
+    object-fit: cover;
+    height: 300px;
+}
+/*.card-title {*/
+/*    font-weight: bold;*/
+/*    font-size: 24px;*/
+/*}*/
+.card-text {
+    font-size: 18px;
+}
+.card-price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card {
+    margin: auto;
+}
+
+/*.col-md-6 h1 {*/
+/*    margin: auto;*/
+/*    width: 400px;*/
+/*}*/
+.col-md-6 p {
+    margin: auto;
+    width: 400px;
+}
+.col-md-6 h2 {
+    margin: auto;
+    width: 400px;
+}
+.col-md-6 form {
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 200px;
+}
+/*.col-md-6 a {*/
+/*    margin-left: 50%;*/
+/*    margin-top: 10px;*/
+/*    width: 200px;*/
+/*}*/
+
+
+
 .table-product.table-striped tbody tr:nth-of-type(odd) {
     background-color: #f3f8fa!important
 }
 .table-product td{
     border-top: 0px solid #dee2e6 !important;
     color: #728299!important;
+}
+
+.add-to-cart-btn {
+    background: #d7ba84 !important;
+    border: none;
+}
+
+.add-to-cart-btn:hover {
+    background: #a98f5d !important;
+}
+
+.view-product {
+    height: 70vh !important;
+}
+
+.add-button {
+    width: 100% !important;
+}
+
+.button-continue {
+    width: 100% !important;
+}
+
+.view-form {
+    display: flex;
 }

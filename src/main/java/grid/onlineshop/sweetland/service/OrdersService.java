@@ -213,6 +213,10 @@ public class OrdersService {
 
     }
 
+    public List<Orders> getAllOrders(){
+        return ordersRepository.findAll();
+    }
+
     @PreAuthorize("hasRole('USER')")
     public Orders removeOrder(Long orderId) throws OrdersException {
             Optional<Orders> orderOpt = ordersRepository.findById(orderId);

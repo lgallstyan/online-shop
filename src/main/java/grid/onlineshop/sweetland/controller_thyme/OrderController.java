@@ -12,6 +12,7 @@ import grid.onlineshop.sweetland.model.User;
 import grid.onlineshop.sweetland.service.CartService;
 import grid.onlineshop.sweetland.service.OrdersService;
 import grid.onlineshop.sweetland.service.UserService;
+import grid.onlineshop.sweetland.util.enums.Role;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
@@ -20,6 +21,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -58,10 +61,26 @@ public class OrderController {
 
         cartService.removeAllProductsInCart(user.getId());
 
-
-        return "success";
+        return "redirect:/";
 
     }
+
+    @GetMapping("/orders")
+    public String seeOrders(Model model,HttpServletRequest request) throws UserNotFoundException {
+        String jwtToken = getCookie(request);
+
+        String username = jwtService.extractUsername(jwtToken);
+        if (!userService.getByEmail(username).getRole().equals(Role.ADMIN)){
+            model.addAttribute("error","Error");
+            return "login";
+        }
+
+        List<Orders> orders = ordersService.getAllOrders();
+        model.addAttribute("orders",orders);
+
+        return "admin";
+    }
+
 
 
 

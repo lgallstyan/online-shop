@@ -1,0 +1,158 @@
+/*@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css');*/
+
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    text-decoration: none;*/
+/*    box-sizing: border-box;*/
+/*}*/
+/*.navba{*/
+/*    position: fixed;*/
+/*    background-color: transparent;*/
+/*    width: 100%;*/
+/*    padding: 30px 0;*/
+/*    top: 0;*/
+/*    z-index: 100;*/
+/*    line-height: 20px;*/
+/*}*/
+/*.inner-widt{*/
+/*    max-width: 1300px;*/
+/*    margin: auto;*/
+/*    padding: 0 60px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*}*/
+/*.log{*/
+/*    font-size: 40px;*/
+/*    font-weight: 100;*/
+/*    font-family: 'Great Vibes',sans-serif;*/
+
+/*    color: #222222;*/
+/*    cursor: pointer;*/
+/*}*/
+/*.navbar-men a{*/
+/*    font-size: 13px;*/
+/*    font-weight: 500;*/
+/*    font-family: 'Raleway',sans-serif;*/
+/*    color: #222222;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 2px;*/
+/*    margin-left: 35px;*/
+/*    display: inline-block;*/
+/*    text-decoration: none;*/
+/*}*/
+/*.navbar-men a::after{*/
+/*    content: '';*/
+/*    display: block;*/
+/*    width: 0;*/
+/*    height: 1.8px;*/
+/*    background-color: #de6900;*/
+/*    transition: width .3s;*/
+/*}*/
+/*.navbar-men a:hover::after{*/
+/*    width: 100%;*/
+/*}*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+    background: #f8f2e7;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+.main-header-logo {
+    font-size: 40px;
+    font-weight: 100;
+    font-family: 'Great Vibes', sans-serif;
+    margin-left: 40px;
+    color: #222222;
+    cursor: pointer;
+}
+
+.main-header .main-header-form {
+    display: flex;
+    gap: 20px;
+}
+
+.main-header-form .header-form--input {
+    border: 1px solid silver;
+    padding: 6px 4px;
+    border-radius: 6px;
+
+}
+
+.main-header-form .header-form-submit-button {
+    border-radius: 6px;
+    border: none;
+    background: #d7ba84;
+    padding: 6px 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.main-header-form .header-form-submit-button:hover {
+    background: #a98f5d;
+    position: static !important;
+}
+
+.main-header-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    margin-right: 20px !important;
+}
+
+.main-header-nav .nav-item {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    color: #222222;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 35px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.main-header-nav .nav-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.8px;
+    background-color: #de6900;
+    transition: width .3s;
+}
+
+.main-header-nav .nav-item:hover::after {
+    width: 100%;
+}
+
+.header-form-submit-button {
+    align-self: flex-start;
+    font-size: 16px !important;
+}
+
+#products {
+    margin-top: 100px !important;
+    background: #f8f2e7;
+}
+
+body {
+    background: #f8f2e7;
+}
+
+
+

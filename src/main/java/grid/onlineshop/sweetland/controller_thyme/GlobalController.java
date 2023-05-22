@@ -34,10 +34,10 @@ public class GlobalController {
         return "contact";
     }
 
-    @GetMapping("/home")
-    public String home(Model model) {
-        return "prod";
-    }
+//    @GetMapping("/home")
+//    public String home(Model model) {
+//        return "prod";
+//    }
 
     @GetMapping("/about")
     public String about() {
@@ -46,12 +46,12 @@ public class GlobalController {
 
     @GetMapping("/card")
     public String card(){
-        return "card";
+        return "card-2";
     }
 
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String myAccount(Model model) {
-        model.addAttribute("classicActiveLogin", true);
+//        model.addAttribute("classicActiveLogin", true);
         model.addAttribute("user", new AddUserDto());
         return "login";
     }
@@ -70,6 +70,10 @@ public class GlobalController {
 //        return "welcome";
 //    }
 
+    @GetMapping("/success")
+    public String success(){
+        return "success";
+    }
 
 
 

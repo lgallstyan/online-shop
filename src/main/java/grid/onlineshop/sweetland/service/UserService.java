@@ -127,6 +127,10 @@ public class UserService {
         return user.getFirstName();
     }
 
+    public List<User> getAll(){
+        return userRepository.findAll();
+    }
+
     //  private Set<GrantedAuthority> getAuthorities(User user) {
 //    Set<GrantedAuthority> authorities = new HashSet<>();
 //    for (Role role : user.getRole()) {

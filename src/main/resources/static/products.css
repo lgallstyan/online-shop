@@ -1,0 +1,125 @@
+
+/*#products {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(3, 1fr);*/
+
+/*    !*grid-template-columns: 1fr 1fr;*!*/
+/*    color: #222222;*/
+/*    background-color: #f8f2e7;*/
+/*    padding: 0 100px;*/
+/*}*/
+
+/*section#products {*/
+/*    padding-top: 200px;*/
+/*}*/
+
+/*h1 {*/
+/*    font-family: 'Raleway',sans-serif;*/
+/*    margin-top: 50px;*/
+/*    color: #222222;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 2px;*/
+/*    margin-left: 35px;*/
+/*    display: inline-block;*/
+
+/*}*/
+
+
+/* .card {*/
+/*     !*display: inline-block;*!*/
+/*     height: 400px;*/
+/* }*/
+
+/*.card-img-top {*/
+/*    object-fit: cover;*/
+/*    height: 200px;*/
+/*}*/
+
+/*.card-title {*/
+/*    font-weight: bold;*/
+/*    font-size: 24px;*/
+/*}*/
+
+/*.card-text {*/
+/*    font-size: 18px;*/
+/*}*/
+
+/*.card-price {*/
+/*    font-size: 24px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.col-md-4 {*/
+/*    border: 1px solid #ddd;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px;*/
+/*    margin: 5px;*/
+/*    width: 420px;*/
+/*    gap: 1px;*/
+/*    display: inline-block;*/
+/*    !*flex: 0 0 33.333333%;*!*/
+/*    !*max-width: 33.333333%;*!*/
+/*}*/
+
+/*.row {*/
+/*    width: 1500px;*/
+/*}*/
+
+/*.card-body {*/
+/*    position: relative;*/
+/*    !*display: inline-block;*!*/
+/*}*/
+
+/*.price {*/
+/*    position: absolute;*/
+/*    bottom: -40px;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    flex-direction: row;*/
+/*    align-items: center;*/
+/*    gap: 49px;*/
+/*}*/
+
+/*.content2 button{*/
+/*    padding: 14px 27px;*/
+/*    margin-top: 30px;*/
+/*    background-color: #de6900;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    color: #fff;*/
+/*    font-size: 15px;*/
+/*    font-weight: 700;*/
+/*    letter-spacing: 2px;*/
+/*    font-family: 'Raleway',sans-serif;*/
+/*    cursor: pointer;*/
+/*    text-transform: uppercase;*/
+/*    transition: 0.3s;*/
+/*}*/
+
+
+/*.search-panel {*/
+/*    background-color: #E678; !* Set the background color to light burgundy *!*/
+/*    color: white; !* Set the text color to white *!*/
+/*    padding: 10px; !* Add some padding *!*/
+/*    display: inline-block;*/
+
+/*}*/
+
+
+.add-to-cart-btn {
+    background: #d7ba84 !important;
+    border: none;
+}
+
+.add-to-cart-btn:hover {
+    background: #a98f5d !important;
+}
+
+.card-image {
+    height: 400px !important;
+    width: 400px !important;
+    max-height: 400px !important;
+    max-width: 400px !important;
+    align-self: center !important;
+    padding-top: 32px;
+}

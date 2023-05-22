@@ -4,89 +4,28 @@
     <meta charset="UTF-8">
     <title>Sweetland - Cart</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" th:href="@{/motion-background.css/}">-->
     <link rel="stylesheet" th:href="@{/menu-b.css/}">
 
-    <style>
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 28px;
-        }
-
-        .card {
-            height: 20%;
-        }
-
-        .card-img-top {
-            object-fit: cover;
-            height: 100px;
-        }
-
-        .card-title {
-            font-weight: bold;
-            font-size: 24px;
-        }
-
-        .card-text {
-            font-size: 18px;
-        }
-
-        .card-price {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .table td, .table th {
-            vertical-align: middle;
-            font-size: 18px;
-        }
-
-        .table th {
-            font-weight: bold;
-        }
-
-        .cart-table {
-            border: 1px solid #ccc;
-            border-collapse: collapse;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .cart-table th {
-            padding: 10px;
-            text-align: left;
-            background-color: #f2f2f2;
-            border: 1px solid #ccc;
-        }
-
-        .cart-table td {
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-    </style>
 </head>
 <body>
 
-<nav class="navba">
-    <div class="inner-widt">
-        <a href="http://localhost:9090/sweet/" class="log" style="text-decoration: none;">Sweetland</a>
-        <div class="navbar-men">
-            <a th:href="@{/}">Գլխավոր</a>
-            <a th:href="@{/about}">Մեր մասին</a>
-            <a th:href="@{/products}">Տեսականի</a>
-            <a th:href="@{/login}">Հաշիվ</a>
-            <a th:href="@{/contact}">Հետադարձ կապ</a>
+<header class="main-header">
+    <a href="http://localhost:9090/sweet/" class="main-header-logo" style="text-decoration: none;">Sweetland</a>
 
-        </div>
-    </div>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-        <li><a th:href="@{/checkout}">Վճարել</a></li>
-        </li>
-    </ul>
-</nav>
+    <form class="main-header-form" th:action="@{/search}" method="get">
+        <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
+        <button class="header-form-submit-button" type="submit">Որոնել</button>
+    </form>
 
+    <nav class="main-header-nav">
+        <a class="nav-item" th:href="@{/}">Գլխավոր</a>
+        <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
+        <a class="nav-item" th:href="@{/products}">Տեսականի</a>
+        <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
+        <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+    </nav>
 
+</header>
 
 <div class="container my-4">
 
@@ -96,7 +35,7 @@
             <th>Ապրանք</th>
             <th>Գին</th>
             <th>Քանակ</th>
-            <th>Ընդամենը</th>
+            <th>Արժեք</th>
         </tr>
         </thead>
         <tbody>
@@ -112,31 +51,35 @@
                     </div>
                 </div>
             </td>
-            <td th:text="${cartItem.product.price}" class="align-middle">$</td>
+            AMD<td th:text="${cartItem.product.price + 'AMD'}" class="align-middle">$</td>
             <td>
                 <div class="row">
                     <div class="col-md-6">
                         <form th:action="@{'/cart/update/' + ${cartItem.product.id}}" method="post">
                             <input type="number" name="quantity" th:value="${cartItem.quantity}" min="1"
                                    class="form-control">
-                            <button type="submit" class="btn btn-primary mt-2">Փոփոխել</button>
+                            <button type="submit" class="change--button btn btn-warning mt-2">Փոփոխել</button>
                         </form>
                     </div>
                     <div class="col-md-6">
                         <form th:action="@{'/cart/remove/' + ${cartItem.id}}" method="post">
-                            <button type="submit" class="btn btn-danger">Ջնջել</button>
+                            <button type="submit" class="delete-button btn btn-danger">Ջնջել</button>
                         </form>
                     </div>
                 </div>
             </td>
-            <td th:text="${cartItem.product.price * cartItem.quantity}" class="align-middle"></td>
+            <td th:text="${cartItem.product.price * cartItem.quantity + 'AMD'}" class="align-middle">AMD</td>
         </tr>
         <tr>
             <td colspan="3"><strong>Ընդամենը:</strong></td>
-            <td th:text="${totalPrice}" class="align-middle"></td>
+            <td th:text="${totalPrice + 'AMD'}" class="align-middle"></td>
         </tr>
         </tbody>
     </table>
+
+
+    <a  class="pay-button" th:href="@{/checkout}"><button class="btn btn-outline-warning">Վճարել</button></a>
+
 
 </div>
 </body>

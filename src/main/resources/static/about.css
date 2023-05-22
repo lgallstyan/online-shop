@@ -1,0 +1,110 @@
+/* Styles for the about page */
+
+#about {
+    height: 120vh;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+    color: #222222;
+    background-color: #f8f2e7;
+    padding: 0 100px;
+}
+
+h1 {
+    font-family: 'Raleway',sans-serif;
+    margin-top: 10px;
+    color: #222222;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 35px;
+    display: inline-block;
+
+}
+
+
+.content1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.content1 .image {
+    background-image: url('https://www.foodandwine.com/thmb/kHhXne4qG5U-kInXCqJTG3e2D1s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/coffee-cookie-crumble-XL-RECIPE0318_0-23b67c3237a449fbbb7226d2fc6db3e2.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    /*height: 400px;*/
+}
+
+.content1 .title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.content2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.content2 .image {
+    background-image: url('https://thehappyfoodie.co.uk/wp-content/uploads/2015/02/LAVA900.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+}
+
+.content2 .title {
+    flex-basis: 50%;
+    margin-left: 50px;
+}
+
+.content2 .title p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.content2 .title button {
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.content2 .title button:hover {
+    background-color: #ffaf5e;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.social-icons li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.social-icons li:last-child {
+    margin-right: 0;
+}
+
+.social-icons a {
+    color: #000;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+

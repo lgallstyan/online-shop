@@ -25,9 +25,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -51,12 +53,22 @@ public class AuthenticationController {
     public String register(@ModelAttribute("user") AddUserDto user, Model model) {
         try {
             authenticationService.addCustomer(user);
+            return "redirect:/products";
         } catch (UserAlreadyExistsException e) {
             model.addAttribute("error", "User with this email already exists!");
             return "login";
         }
 
-        return "products";
+//        return "products";
+    }
+
+    @GetMapping("/users")
+    public String seeUsers(Model model,HttpServletRequest request){
+        List<User> users = userService.getAll();
+
+        model.addAttribute("users",users);
+        return "users";
+
     }
 
 
@@ -83,7 +95,7 @@ public class AuthenticationController {
                 return "redirect:/admin";
             } else {
 
-                return "products";
+                return "redirect:/products";
             }
         }
     }
