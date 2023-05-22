@@ -1,176 +1,60 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--  <title>About Sweetland</title>-->
-<!--  <link rel="stylesheet" th:href="@{/welcome.css}">-->
-
-<!--  <style>-->
-<!--    body {-->
-<!--      font-family: SansSerif,serif;-->
-<!--      /*background-color: #F9E0E3;*/-->
-<!--      color: #444;-->
-<!--      margin: 0;-->
-<!--      /*margin-left: 500px;*/-->
-<!--      padding: 0;-->
-<!--    }-->
-
-<!--    header {-->
-<!--      /*background-color: #FFC9D2;*/-->
-<!--      padding: 1rem;-->
-<!--      text-align: center;-->
-<!--    }-->
-
-<!--    h1 {-->
-<!--      margin-top: 0;-->
-<!--      font-size: 3rem;-->
-<!--      color: #333333;-->
-<!--    }-->
-
-<!--    h2 {-->
-<!--      font-size: 2rem;-->
-<!--      color: #333333;-->
-<!--      margin-top: 2rem;-->
-<!--    }-->
-
-<!--    p {-->
-<!--      font-size: 1.1rem;-->
-<!--      line-height: 1.5;-->
-<!--      margin: 1rem 0;-->
-<!--    }-->
-
-<!--    ul {-->
-<!--      list-style: none;-->
-<!--      padding: 0;-->
-<!--      margin: 1rem 0;-->
-<!--    }-->
-
-<!--    li {-->
-<!--      margin: 0.5rem 0;-->
-<!--    }-->
-
-<!--    a {-->
-<!--      color: #333333;-->
-<!--      text-decoration: none;-->
-<!--      font-weight: bold;-->
-<!--    }-->
-
-<!--    a:hover {-->
-<!--      text-decoration: underline;-->
-<!--    }-->
-
-<!--    .container {-->
-<!--      max-width: 1200px;-->
-<!--      margin: 0 auto;-->
-<!--      padding: 2rem;-->
-<!--      /*background-color: #FFF;*/-->
-<!--      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);-->
-<!--      text-align: center; /* Add this line */-->
-
-<!--    }-->
-<!--  </style>-->
-<!--</head>-->
-<!--<body>-->
-<!--<header>-->
-<!--  <h1>About Sweetland</h1>-->
-<!--  <nav>-->
-<!--    <ul>-->
-<!--      <li><a th:href="@{/}">Back</a></li>-->
-<!--    </ul>-->
-<!--  </nav>-->
-
-<!--</header>-->
-<!--<div class="container">-->
-<!--  <h2>Our Story</h2>-->
-<!--  <p>Welcome to Sweetland, your one-stop-shop for all things sweet! Our online store offers a wide variety of candies, chocolates, gummies, and more, all at affordable prices.</p>-->
-<!--  <p>From mouth-watering candy to delectable desserts, we have it all.</p>-->
-<!--  <p>Take a look at our selection and <a href="#">place your order today</a>!</p>-->
-
-<!--  <h2>Our Mission</h2>-->
-<!--  <p>Our mission is to bring joy to people's lives through delicious treats. We believe that everyone deserves a little sweetness in their day, and we strive to make that possible by offering high-quality products and exceptional customer service.</p>-->
-
-<!--  <h2>Our History</h2>-->
-<!--  <p>Sweetland was founded in 2023 by a group of candy enthusiasts who wanted to share their passion for sweets with the world. Since then, we have grown to become one of the leading online sweet shops, serving customers all over the world.</p>-->
-<!--  -->
-<!--  <h2>Connect With Us</h2>-->
-<!--  <ul>-->
-<!--    <li><a href="https://www.facebook.com/sweetland">Facebook</a></li>-->
-<!--    <li><a href="https://www.twitter.com/sweetland">Twitter</a></li>-->
-<!--    <li><a href="https://www.instagram.com/sweetland">Instagram</a></li>-->
-<!--  </ul>-->
-
-<!--  <h2>FAQ</h2>-->
-<!--  <h3>What is your return policy?</h3>-->
-<!--  <p>We accept returns within 14 days of delivery. Please contact us to initiate the return process.</p>-->
-
-<!--  <h3>What payment methods do you accept?</h3>-->
-<!--  <p>We accept all major credit cards, PayPal, and Apple Pay.</p>-->
-
-<!--  <h3>Do you offer international shipping?</h3>-->
-<!--  <p>Yes, we offer international shipping to most countries. Shipping rates and times may vary.</p>-->
-
-<!--  <h2>Legal Information</h2>-->
-<!--  <p>For legal information, please refer to our <a href="https://www.sweetland.com/legal">Terms of Use</a> and <a href="https://www.sweetland.com/legal">Privacy Policy</a>.</p>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Sweetland</title>
-  <link rel="stylesheet" href="style.css">
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-  <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" th:href="@{/about.css/}">
-  <link rel="stylesheet" th:href="@{/menu-b.css/}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sweetland</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" th:href="@{/about.css/}">
+    <link rel="stylesheet" th:href="@{/menu-b.css/}">
 
 </head>
 <body>
 
 <header class="main-header">
-  <a href="http://localhost:9090/sweet/" class="main-header-logo" style="text-decoration: none;">Sweetland</a>
+    <a href="http://localhost:9090/sweet/" class="main-header-logo" style="text-decoration: none;">Sweetland</a>
 
-  <form class="main-header-form" th:action="@{/search}" method="get">
-    <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
-    <button class="header-form-submit-button" type="submit">Որոնել</button>
-  </form>
+    <form class="main-header-form" th:action="@{/search}" method="get">
+        <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
+        <button class="header-form-submit-button" type="submit">Search</button>
+    </form>
 
-  <nav class="main-header-nav">
-    <a class="nav-item" th:href="@{/}">Գլխավոր</a>
-    <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
-    <a class="nav-item" th:href="@{/products}">Տեսականի</a>
-    <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
-    <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
-  </nav>
+    <nav class="main-header-nav">
+        <a class="nav-item" th:href="@{/}">Home</a>
+        <a class="nav-item" th:href="@{/about}">About</a>
+        <a class="nav-item" th:href="@{/products}">Sweets</a>
+        <a class="nav-item" th:href="@{/login}">Account</a>
+        <a class="nav-item" th:href="@{/contact}">Contact</a>
+    </nav>
 
 </header>
 
 <section id="about">
-  <div class="content1">
-    <div class="image"></div>
-    <div class="title">
-      <h1>Սվիթլենդի մասին</h1>
+    <div class="content1">
+        <div class="image"></div>
+        <div class="title">
+            <h1>About Sweetland</h1>
+        </div>
     </div>
-  </div>
-  <div class="content2">
-    <div class="title">
-      <p>Սվիթլենդում մենք հավատում ենք, որ կյանքը ավելի լավ է մի փոքր քաղցրով:</p>
-      <p>Այդ իսկ պատճառով մենք առաջարկում ենք քաղցրավենիքի լայն տեսականի, որը անպայման կգոհացնի բոլոր համեղը գնահատողներին:</p>
-      <p>Դուք կարող եք մեզ վստահել Ձեր ցանկացած առիթի քաղցրավենիքները, և մենք արագ կկազմակերպենք համեղագույն քացրավենիքների առաքումը։</p>
+    <div class="content2">
+        <div class="title">
+            <p>At Sweetland, we believe that life is sweeter with a touch of magic and a dash of indulgence. </p>
+            <p>Our journey began with a simple love for all things sweet, and it has blossomed into a vibrant online
+                community where sugar aficionados like you can discover an extraordinary assortment of confections from
+                around the globe.</p>
+            <p>Feel free to personalize and customize this text to align with your brand's tone and vision.</p>
+        </div>
+        <div class="image"></div>
     </div>
-    <div class="image"></div>
-  </div>
-<!--  <div class="social-container">-->
-<!--    <ul class="social-icons">-->
-<!--&lt;!&ndash;      <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;      <li><a href="#"><i class="fa fa-instagram"></i></a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;      <li><a href="#"><i class="fa fa-twitter"></i></a></li>&ndash;&gt;-->
-<!--    </ul>-->
-<!--  </div>-->
+    <!--  <div class="social-container">-->
+    <!--    <ul class="social-icons">-->
+    <!--&lt;!&ndash;      <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;      <li><a href="#"><i class="fa fa-instagram"></i></a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;      <li><a href="#"><i class="fa fa-twitter"></i></a></li>&ndash;&gt;-->
+    <!--    </ul>-->
+    <!--  </div>-->
 </section>
 </body>
 </html>

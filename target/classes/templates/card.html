@@ -20,11 +20,11 @@
                 <img src="image/chip.png" alt="">
                 <img src="image/visa.png" alt="">
             </div>
-            <span>Քարտի համարը</span>
+            <span>Card Number</span>
             <div class="card-number-box">################</div>
             <div class="flexbox">
                 <div class="box">
-                    <div class="card-holder-name">Անուն ազգանուն</div>
+                    <div class="card-holder-name">Name Surname</div>
                 </div>
                 <div class="box">
                     <span>expires</span>
@@ -58,120 +58,82 @@
             <input type="text" class="card-holder-input">
         </div>
 
-<!--        <div class="flexbox">-->
-            <div class="inputBox">
-                <span>expiration mm</span>
-                <select name="" id="" class="month-input">
-                    <option value="month" selected disabled>month</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>
-            </div>
-            <div class="inputBox">
-                <span>expiration yy</span>
-                <select name="" id="y" class="year-input">
-                    <option value="year" selected disabled>year</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028</option>
-                    <option value="2029">2029</option>
-                    <option value="2030">2030</option>
-                </select>
-            </div>
-            <div class="inputBox">
-                <span>cvv</span>
-                <input type="text" maxlength="4" class="cvv-input">
-            </div>
+        <!--        <div class="flexbox">-->
+        <div class="inputBox">
+            <span>expiration mm</span>
+            <select name="" id="" class="month-input">
+                <option value="month" selected disabled>month</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+        <div class="inputBox">
+            <span>expiration yy</span>
+            <select name="" id="y" class="year-input">
+                <option value="year" selected disabled>year</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+            </select>
+        </div>
+        <div class="inputBox">
+            <span>cvv</span>
+            <input type="text" maxlength="4" class="cvv-input">
+        </div>
 
         <form th:action="@{/order}" th:object="${addressDto}" th:method="POST">
 
-        <div class="inputBox">
-                <span>Հասցե</span>
+            <div class="inputBox">
+                <span>Address</span>
                 <input type="text" maxlength="16" th:field="*{addressLine}" class="card-number-input">
             </div>
             <div class="inputBox">
-                <span>Երկիր</span>
+                <span>Country</span>
                 <input type="text" maxlength="16" th:field="*{country}" class="card-number-input">
             </div>
             <div class="inputBox">
-                <span>Մարզ</span>
+                <span>Province</span>
                 <input type="text" maxlength="16" th:field="*{province}" class="card-number-input">
             </div>
             <div class="inputBox">
-                <span>Քաղաք</span>
+                <span>City</span>
                 <input type="text" maxlength="16" th:field="*{city}" class="card-number-input">
             </div>
             <div class="inputBox">
-                <span>Փոստային ինդեքս</span>
+                <span>Postal Code</span>
                 <input type="text" maxlength="16" th:field="*{postalCode}" class="card-number-input">
             </div>
-            <a  class="order-button" th:href="@{/}"><input type="submit"  class="submit-btn"></a>
-<!--            <button class="btn btn-outline-warning">Վճարել</button></a>-->
+            <a class="order-button" th:href="@{/}"><input type="submit" class="submit-btn"></a>
+            <!--            <button class="btn btn-outline-warning">Վճարել</button></a>-->
             <!--            <button type="submit" class="btn btn-outline-danger" value="Հաստատել"></button>-->
-<!--            <input type="submit" value="Order">-->
+            <!--            <input type="submit" value="Order">-->
 
 
         </form>
 
 
-<!--        </div>-->
+        <!--        </div>-->
     </form>
 
 
-<!--    <div class="container my-4">-->
-<!--        <h1>Checkout</h1>-->
-<!--        <hr>-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-6 offset-md-3">-->
-<!--                <div class="card">-->
-<!--                    <div class="card-body">-->
-<!--                        <form th:action="@{/order}" th:object="${addressDto}" th:method="post">-->
-<!--                            <h5 class="card-title mb-4">Shipping Address</h5>-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="addressLine">Address Line</label>-->
-<!--                                <input type="text" class="form-control" id="addressLine" name="addressLine" required>-->
-<!--                            </div>-->
-<!--                            <div class="form-row" >-->
-<!--                                <div class="form-group col-md-6">-->
-<!--                                    <label for="country">Country:</label>-->
-<!--                                    <input type="text" class="form-control" id="country" name="country" required>-->
-<!--                                </div>-->
-
-<!--                                <div class="form-group" style="width: 300px;">-->
-<!--                                    <label for="province">Province/State:</label>-->
-<!--                                    <input type="text" class="form-control" id="province" name="province" required>-->
-<!--                                </div>-->
-
-<!--                                <div class="form-group" >-->
-<!--                                    <label for="city">City:</label>-->
-<!--                                    <input type="text" class="form-control" id="city" name="city" required>-->
-<!--                                </div>-->
-
-<!--                                <div class="form-group" style="width: 300px;">-->
-<!--                                    <label for="postalCode">Postal Code:</label>-->
-<!--                                    <input type="text" class="form-control" id="postalCode" name="postalCode" required>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-<!--                        </form>-->
-
-
-                    </div>
+</div>
 
 
 <script>

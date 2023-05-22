@@ -14,15 +14,15 @@
 
     <form class="main-header-form" th:action="@{/search}" method="get">
         <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
-        <button class="header-form-submit-button" type="submit">Որոնել</button>
+        <button class="header-form-submit-button" type="submit">Search</button>
     </form>
 
     <nav class="main-header-nav">
-        <a class="nav-item" th:href="@{/}">Գլխավոր</a>
-        <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
-        <a class="nav-item" th:href="@{/products}">Տեսականի</a>
-        <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
-        <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+        <a class="nav-item" th:href="@{/}">Home</a>
+        <a class="nav-item" th:href="@{/about}">About</a>
+        <a class="nav-item" th:href="@{/products}">Sweets</a>
+        <a class="nav-item" th:href="@{/login}">Account</a>
+        <a class="nav-item" th:href="@{/contact}">Contact</a>
     </nav>
 
 </header>
@@ -32,10 +32,10 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Ապրանք</th>
-            <th>Գին</th>
-            <th>Քանակ</th>
-            <th>Արժեք</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Price</th>
         </tr>
         </thead>
         <tbody>
@@ -51,34 +51,34 @@
                     </div>
                 </div>
             </td>
-            AMD<td th:text="${cartItem.product.price + 'AMD'}" class="align-middle">$</td>
+            <td th:text="${cartItem.product.price}" class="align-middle">$</td>
             <td>
                 <div class="row">
                     <div class="col-md-6">
                         <form th:action="@{'/cart/update/' + ${cartItem.product.id}}" method="post">
                             <input type="number" name="quantity" th:value="${cartItem.quantity}" min="1"
                                    class="form-control">
-                            <button type="submit" class="change--button btn btn-warning mt-2">Փոփոխել</button>
+                            <button type="submit" class="change--button btn btn-warning mt-2">Update</button>
                         </form>
                     </div>
                     <div class="col-md-6">
                         <form th:action="@{'/cart/remove/' + ${cartItem.id}}" method="post">
-                            <button type="submit" class="delete-button btn btn-danger">Ջնջել</button>
+                            <button type="submit" class="delete-button btn btn-danger">Delete</button>
                         </form>
                     </div>
                 </div>
             </td>
-            <td th:text="${cartItem.product.price * cartItem.quantity + 'AMD'}" class="align-middle">AMD</td>
+            <td th:text="${cartItem.product.price * cartItem.quantity}" class="align-middle">AMD</td>
         </tr>
         <tr>
-            <td colspan="3"><strong>Ընդամենը:</strong></td>
-            <td th:text="${totalPrice + 'AMD'}" class="align-middle"></td>
+            <td colspan="3"><strong>Total:</strong></td>
+            <td th:text="${totalPrice}" class="align-middle">AMD</td>
         </tr>
         </tbody>
     </table>
 
 
-    <a  class="pay-button" th:href="@{/checkout}"><button class="btn btn-outline-warning">Վճարել</button></a>
+    <a  class="pay-button" th:href="@{/checkout}"><button class="btn btn-outline-warning">Checkout</button></a>
 
 
 </div>

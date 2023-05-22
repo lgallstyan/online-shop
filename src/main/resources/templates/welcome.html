@@ -20,15 +20,15 @@
 
     <form class="main-header-form" th:action="@{/search}" method="get">
         <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
-        <button class="header-form-submit-button" type="submit">Որոնել</button>
+        <button class="header-form-submit-button" type="submit">Search</button>
     </form>
 
     <nav class="main-header-nav">
-        <a class="nav-item" th:href="@{/}">Գլխավոր</a>
-        <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
-        <a class="nav-item" th:href="@{/products}">Տեսականի</a>
-        <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
-        <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+        <a class="nav-item" th:href="@{/}">Home</a>
+        <a class="nav-item" th:href="@{/about}">About</a>
+        <a class="nav-item" th:href="@{/products}">Sweets</a>
+        <a class="nav-item" th:href="@{/login}">Account</a>
+        <a class="nav-item" th:href="@{/contact}">Contact</a>
     </nav>
 
 </header>
@@ -36,16 +36,17 @@
 <section id="home">
     <div class="content1">
         <div class="title">
-            <h1>փորձեք մեր համեղ քաղցրավենիքները</h1>
+            <h1>Try our delicious Sweets!</h1>
         </div>
         <div class="image"></div>
     </div>
     <div class="content2">
         <div class="image"></div>
         <div class="title">
-            <p>Բարի գալուստ Սվիթլենդ՝ ձեր սրտի խանութը բոլոր քաղցրավենիքների համար:</p>
-            <p>Ուսումնասիրեք մեր լայն տեսականին և <a class="order-now-btn" href="http://localhost:9090/sweet/products">կատարիր քո պատվերը հիմա</a>!</p>
-            <a href="http://localhost:9090/sweet/products"><button class="order-btn btn btn-outline-secondary">Պատվիրել</button></a>
+            <p>Welcome to Sweetland, where sugar-coated dreams come true!</p>
+             <p>We are thrilled to be your ultimate destination for all things sweet and delightful. As passionate confectionery enthusiasts, we have carefully crafted an online shop that brings together a world of tempting treats right at your fingertips.</p>
+            <p>Explore our wide range and  <a class="order-now-btn" href="http://localhost:9090/sweet/products">place your order now</a>!</p>
+            <a href="http://localhost:9090/sweet/products"><button class="order-btn btn btn-outline-secondary">Order</button></a>
         </div>
     </div>
 

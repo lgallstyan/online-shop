@@ -90,15 +90,15 @@
 
   <form class="main-header-form" th:action="@{/search}" method="get">
     <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
-    <button class="header-form-submit-button" type="submit">Որոնել</button>
+    <button class="header-form-submit-button" type="submit">Search</button>
   </form>
 
   <nav class="main-header-nav">
-    <a class="nav-item" th:href="@{/}">Գլխավոր</a>
-    <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
-    <a class="nav-item" th:href="@{/products}">Տեսականի</a>
-    <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
-    <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+    <a class="nav-item" th:href="@{/}">Home</a>
+    <a class="nav-item" th:href="@{/about}">About</a>
+    <a class="nav-item" th:href="@{/products}">Sweets</a>
+    <a class="nav-item" th:href="@{/login}">Account</a>
+    <a class="nav-item" th:href="@{/contact}">Contact</a>
   </nav>
 
 </header>
@@ -107,22 +107,22 @@
 <div class="containerik">
   <!-- Display success message if the request attribute "sent" is true -->
   <div th:if="${sent}" class="success-messageik" id="success-message">
-    <p>Ձեր նամակը հաջողությամբ ուղարկվել է։</p>
+    <p>Your Message is Successfully Sent!</p>
   </div>
 </div>
 
 <div style="margin-left:420px; margin-top: 100px;">
 <form th:action="@{/contact}" th:object="${contactForm}" method="post" class="form">
-  <label for="name">Անուն:</label>
+  <label for="name">Name:</label>
   <input class="input" type="text" id="name" name="name" th:field="*{name}" required>
 
-  <label for="email">Էլ. հասցե</label>
+  <label for="email">Email:</label>
   <input class="input" type="email" id="email" name="email" th:field="*{email}" required>
 
-  <label for="message">Նամակ:</label>
+  <label for="message">Message:</label>
   <textarea id="message" name="message" th:field="*{message}" required></textarea>
 
-  <button type="submit" class="button btn" style="margin-left: 220px; width:100px;">Ուղարկել</button>
+  <button type="submit" class="button btn" style="margin-left: 220px; width:100px;">Send</button>
 </form>
 </div>
 

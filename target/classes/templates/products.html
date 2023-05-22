@@ -25,15 +25,15 @@
 
     <form class="main-header-form" th:action="@{/search}" method="get">
         <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
-        <button class="header-form-submit-button" type="submit">Որոնել</button>
+        <button class="header-form-submit-button" type="submit">Search</button>
     </form>
 
     <nav class="main-header-nav">
-        <a class="nav-item" th:href="@{/}">Գլխավոր</a>
-        <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
-        <a class="nav-item" th:href="@{/products}">Տեսականի</a>
-        <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
-        <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+        <a class="nav-item" th:href="@{/}">Home</a>
+        <a class="nav-item" th:href="@{/about}">About</a>
+        <a class="nav-item" th:href="@{/products}">Sweets</a>
+        <a class="nav-item" th:href="@{/login}">Account</a>
+        <a class="nav-item" th:href="@{/contact}">Contact</a>
     </nav>
 
 </header>
@@ -53,12 +53,12 @@
 
                         <div class="buttn">
 
-                            <button type="button" class="add-to-cart-btn btn btn-primary mr-2">Ավելացնել զամբյուղ</button>
+                            <button type="button" class="add-to-cart-btn btn btn-primary mr-2">Add to Cart</button>
 
                             <!--                    <a th:href="@{/product/{id}(id=${product.id})}" class="btn btn-warning">View</a>-->
                             <!--                    <button type="button" class="btn btn-warning">Warning</button>-->
                             <a th:href="@{/product/{id}(id=${product.id})}">
-                                <button class="btn btn-outline-secondary">Դիտել</button>
+                                <button class="btn btn-outline-secondary">View</button>
                             </a>
 
 
@@ -72,122 +72,3 @@
 </section>
 </body>
 </html>
-
-
-<!--<div class="content1">-->
-<!--    <div class="image"></div>-->
-<!--    <div class="title">-->
-<!--        <h1>Sweets</h1>-->
-
-<!--    </div>-->
-<!--    <form class="form-inline my-2 my-lg-0 ml-auto" th:action="@{/search}" method="get">-->
-<!--        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="query">-->
-<!--        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-<!--    </form>-->
-<!--</div>-->
-
-<!--<div class="content2">-->
-<!--    <div class="container my-4">-->
-<!--        &lt;!&ndash;        <h1>Sweets</h1>&ndash;&gt;-->
-<!--        <hr>-->
-<!--        <div class="row mt-4">-->
-<!--            <div class="col-md-4" th:each="product : ${products}">-->
-<!--                <div class="card mb-4 box-shadow">-->
-<!--                    <img class="card-img-top" th:src="@{${product.imageUrl}}" alt="Product Image">-->
-<!--                    <div class="card-body">-->
-<!--                        <h4 class="card-title" th:text="${product.name}">Product Name</h4>-->
-<!--                        <p class="card-text" th:text="${product.description}">Product Description</p>-->
-<!--                        <div class="d-flex justify-content-between align-items-center price">-->
-<!--                            <span class="card-price">AMD<span th:text="${product.price}"></span></span>-->
-
-<!--                            <button type="button" class="btn btn-primary mr-2">Add to Cart</button>-->
-
-<!--                            <a th:href="@{/product/{id}(id=${product.id})}" class="btn btn-secondary">View</a>-->
-
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
-
-
-<!--</nav>-->
-
-
-<!--<div class="container my-4">-->
-<!--    <h1>Sweets</h1>-->
-<!--    <hr>-->
-<!--    <div class="row mt-4">-->
-<!--        <div class="col-md-4" th:each="product : ${products}">-->
-<!--            <div class="card mb-4 box-shadow">-->
-<!--                <img class="card-img-top" th:src="@{${product.imageUrl}}" alt="Product Image">-->
-<!--                <div class="card-body">-->
-<!--                    <h4 class="card-title" th:text="${product.name}">Product Name</h4>-->
-<!--                    <p class="card-text" th:text="${product.description}">Product Description</p>-->
-<!--                    <div class="d-flex justify-content-between align-items-center price">-->
-<!--                        <span class="card-price">AMD<span th:text="${product.price}"></span></span>-->
-
-<!--                        <button type="button" class="btn btn-primary mr-2">Add to Cart</button>-->
-
-<!--                        <a th:href="@{/product/{id}(id=${product.id})}" class="btn btn-secondary">View</a>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
-
-<!--    <nav class="navbar">-->
-<!--        <div class="inner-width">-->
-<!--            <a href="#" class="logo">Sweetland</a>-->
-<!--            <div class="navbar-menu">-->
-<!--                <a href="#">Home</a>-->
-<!--                <a href="#">About</a>-->
-<!--                <a href="#">Services</a>-->
-<!--                <a href="#">Portfolio</a>-->
-<!--                <a href="#">Contact</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; Add search input field and button &ndash;&gt;-->
-<!--        <form class="form-inline my-2 my-lg-0 ml-auto" th:action="@{/search}" method="get">-->
-<!--            <input class="form-control mr-sm-2" type="text" placeholder="Search" name="query">-->
-<!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-<!--        </form>-->
-<!--    </nav>-->
-
-
-<!--&lt;!&ndash;</nav>&ndash;&gt;-->
-
-
-<!--<div class="container my-4">-->
-<!--    <h1>Sweets</h1>-->
-<!--    <hr>-->
-<!--    <div class="row mt-4">-->
-<!--        <div class="col-md-4" th:each="product : ${products}">-->
-<!--            <div class="card mb-4 box-shadow">-->
-<!--                <img class="card-img-top" th:src="@{${product.imageUrl}}" alt="Product Image">-->
-<!--                <div class="card-body">-->
-<!--                    <h4 class="card-title" th:text="${product.name}">Product Name</h4>-->
-<!--                    <p class="card-text" th:text="${product.description}">Product Description</p>-->
-<!--                    <div class="d-flex justify-content-between align-items-center price">-->
-<!--                        <span class="card-price">AMD<span th:text="${product.price}"></span></span>-->
-
-<!--                        <button type="button" class="btn btn-primary mr-2">Add to Cart</button>-->
-
-<!--                        <a th:href="@{/product/{id}(id=${product.id})}" class="btn btn-secondary">View</a>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->

@@ -13,18 +13,18 @@
 </head>
 
 <body>
-<h1>Ավելացնել նոր ապրանք</h1>
+<h1>Add New Product</h1>
 <form method="post" th:action="@{/admin/products/new-product}" th:object="${productDto}" enctype="multipart/form-data">
   <div class="form-group">
-    <label for="name">Ապրանքի անունը:</label>
+    <label for="name">Product Name:</label>
     <input type="text" class="form-control" id="name" th:field="*{name}">
   </div>
   <div class="form-group">
-    <label for="description">Նկարագրություն:</label>
+    <label for="description">Description:</label>
     <textarea class="form-control" id="description" rows="3" th:field="*{description}"></textarea>
   </div>
   <div class="form-group">
-    <label for="price">Արժեք:</label>
+    <label for="price">Price:</label>
     <input type="number" class="form-control" id="price" th:field="*{price}">
   </div>
 
@@ -51,7 +51,7 @@
 <!--    <input type="file" class="form-control" id="imageUrl" th:field="*{imageUrl}">-->
 <!--  </div>-->
   <div class="form-group">
-    <label for="manufacturer">Արտադրող:</label>
+    <label for="manufacturer">Manufacturer:</label>
     <input type="text" class="form-control" id="manufacturer" th:field="*{manufacturer}">
   </div>
 <!--  <div class="form-group">-->
@@ -61,12 +61,12 @@
 <!--    </select>-->
 <!--  </div>-->
   <div class="form-group">
-    <label for="category">Կատեգորիա:</label>
+    <label for="category">Category:</label>
     <input type="text" class="form-control" id="category" th:field="*{category}">
   </div>
 
 
-  <button type="submit" class="btn btn-primary">Ավելացնել ապրանքը</button>
+  <button type="submit" class="btn btn-primary">Add Product</button>
 </form>
 
 <!--<form th:action="@{/add-product}" th:object="${productDto}" method="post" enctype="multipart/form-data">-->

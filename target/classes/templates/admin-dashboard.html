@@ -20,25 +20,25 @@
 
   <form class="main-header-form" th:action="@{/search}" method="get">
     <input class="header-form--input form-control" type="text" placeholder="Search" name="query">
-    <button class="header-form-submit-button" type="submit">Որոնել</button>
+    <button class="header-form-submit-button" type="submit">Search</button>
   </form>
 
   <nav class="main-header-nav">
-    <a class="nav-item" th:href="@{/}">Գլխավոր</a>
-    <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
-    <a class="nav-item" th:href="@{/products}">Տեսականի</a>
-    <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
-    <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+    <a class="nav-item" th:href="@{/}">Home</a>
+    <a class="nav-item" th:href="@{/about}">About</a>
+    <a class="nav-item" th:href="@{/products}">Sweets</a>
+    <a class="nav-item" th:href="@{/login}">Account</a>
+    <a class="nav-item" th:href="@{/contact}">Contact</a>
   </nav>
 
 </header>
- <h1 style="text-align: center;margin-top: 115px">Ադմինիստրացիոն վահանակ</h1>
+ <h1 style="text-align: center;margin-top: 115px">Admin Dashboard</h1>
 <br>
  <h3  th:text="'Բարի գալուստ, ադմինիստրատոր ' +  ${username}" style="text-align: center;"></h3 >
 <br>
-<a  style="margin-left: 420px" href="http://localhost:9090/sweet/orders"><button class="btn btn-outline-primary">Տեսնել պատվերները</button></a>
-<a  href="http://localhost:9090/sweet/users"><button class="btn btn-outline-secondary">Տեսնել օգտատերերին</button></a>
-<a   href="http://localhost:9090/sweet/admin/products/new-product"><button class="btn btn-outline-danger">Ավելացնել ապրանք</button></a>
+<a  style="margin-left: 420px" href="http://localhost:9090/sweet/orders"><button class="btn btn-outline-primary">See Orders</button></a>
+<a  href="http://localhost:9090/sweet/users"><button class="btn btn-outline-secondary">See Users</button></a>
+<a   href="http://localhost:9090/sweet/admin/products/new-product"><button class="btn btn-outline-danger">Add Product</button></a>
 
 
 </body>
