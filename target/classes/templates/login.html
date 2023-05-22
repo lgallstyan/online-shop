@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sweetland</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" th:href="@{/menu-b.css/}">
+    <link rel="stylesheet" th:href="@{/myAccount.css/}">
+</head>
+<body>
+
+<header class="main-header">
+    <a href="http://localhost:9090/sweet/" class="main-header-logo" style="text-decoration: none;">Sweetland</a>
+
+<!--    <form class="main-header-form" th:action="@{/search}" method="get">-->
+<!--        <input class="header-form&#45;&#45;input form-control" type="text" placeholder="Search" name="query">-->
+<!--        <button class="header-form-submit-button" type="submit">Որոնել</button>-->
+<!--    </form>-->
+
+    <nav class="main-header-nav">
+        <a class="nav-item" th:href="@{/}">Գլխավոր</a>
+        <a class="nav-item" th:href="@{/about}">Մեր մասին</a>
+        <a class="nav-item" th:href="@{/products}">Տեսականի</a>
+        <a class="nav-item" th:href="@{/login}">Հաշիվ</a>
+        <a class="nav-item" th:href="@{/contact}">Հետադարձ կապ</a>
+    </nav>
+
+</header>
+<section class="my-account">
+    <!--    <div class="form-wrapper">-->
+    <div class="form-container">
+        <h3>Գրանցվել</h3>
+        <form class="form" th:action="@{/register}" th:object="${user}" method="post">
+            <label for="first-name">Անուն:</label>
+            <input type="text" id="first-name" name="firstName" th:field="*{firstName}" required><br>
+            <label for="last-name">Ազգանուն:</label>
+            <input type="text" id="last-name" name="lastName" th:field="*{lastName}" required><br>
+            <label for="email">Էլ. հասցե:</label>
+            <input type="email" id="email" name="email" th:field="*{email}" required><br>
+            <label for="password">Գաղտնաբառ:</label>
+            <input type="password" id="password" name="password" th:field="*{password}" required><br>
+            <label for="phone">Հեռախոսահամար:</label>
+            <input type="text" id="phone" name="phone" th:field="*{phone}" required><br>
+            <input type="submit" value="Գրանցվել">
+        </form>
+    </div>
+    <!--    </div>-->
+
+    <div class="form-wrapper">
+        <div class="form-container">
+            <h3>Մուտք գործել հաշիվ</h3>
+            <form th:action="@{/login}" th:object="${user}" th:method="post">
+                <label for="login-username">Էլ. հասցե:</label>
+                <input type="email" id="login-username" name="login-username" th:field="*{email}" required><br>
+                <label for="login-password">Գաղտնաբառ:</label>
+                <input type="password" id="login-password" name="login-password" th:field="*{password}" required><br>
+                <input type="submit" value="Մուտք գործել">
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--<footer>-->
+<!--    <p>&copy; 2023 Sweetland. All rights reserved.</p>-->
+<!--</footer>-->
+
+</body>
+</html>
+
