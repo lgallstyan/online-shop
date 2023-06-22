@@ -2,6 +2,7 @@ package grid.onlineshop.sweetland.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 public class JwtInterceptor implements HandlerInterceptor {
@@ -9,7 +10,7 @@ public class JwtInterceptor implements HandlerInterceptor {
     private static final String AUTH_HEADER = "Authorization";
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+    public boolean preHandle(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler)
             throws Exception {
         String token = getTokenFromRequest(request);
         if (token != null) {

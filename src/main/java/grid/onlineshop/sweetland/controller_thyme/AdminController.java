@@ -22,21 +22,18 @@ public class AdminController {
     private final UserService userService;
 
     @GetMapping("/admin")
-    public String getAdminDashboard(Model model,HttpServletRequest request) {
+    public String getAdminDashboard(Model model, HttpServletRequest request) {
 
         String username = userService.findNameByEmail(jwtService.extractUsername(getCookie(request)));
-        model.addAttribute("username",username);
+        model.addAttribute("username", username);
 
         return "admin-dashboard";
     }
 
     @GetMapping("/admin/delete-user")
-    public String deleteCustomer(Model model){
+    public String deleteCustomer(Model model) {
         return "delete-user";
     }
-
-
-
 
 
     private String getCookie(HttpServletRequest request) {
